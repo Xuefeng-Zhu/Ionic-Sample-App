@@ -1,0 +1,55 @@
+
+<ion-view animation="slide-left-right">
+  <ion-content has-header="true" padding="true">
+	  <div class="list card">
+
+		  <div class="item">
+		    <h2>{{item.name}}</h2>
+		    <p>Publish on {{item.dt_create | date:'mediumDate'}}</p>
+		    <span class="badge badge-positive">{{item.price}} €</span>
+		  </div>
+
+		  <div class="item item-body">
+		    <img class="full-image" ng-src="{{item.photo}}">
+		    <div class="item tabs tabs-secondary tabs-icon-left" style="background-color: #4a87ee;">
+		    	<a class="tab-item" ng-click="openModal()" style="color:white;opacity:1.0">
+		      	<i class="icon ion-email"></i>Contact
+		    	</a>
+		  	</div>
+		    <p>{{item.description}}</p>
+		    <p>In {{area}}</p>
+		    <p>Category: {{category}}</p>
+		  </div>
+
+		</div>
+  </ion-content>
+</ion-view>
+
+<!-- MODAL -->
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar bar-energized">
+      <h1 class="title">Contact Us</h1>
+       <button class="button button-energized" ng-click="closeModal()">
+       	<i class="icon ion-close" ></i>
+       </button>
+    </ion-header-bar>
+    <ion-content>
+    	<label class="item item-input">
+		    <i class="icon ion-email placeholder-icon"></i>
+		    <input type="email" placeholder="Your Email" ng-model="contact.email">
+	    </label>
+		  <label class="item item-input">
+		    <textarea placeholder="Text goes here" style="min-height:200px;resize: none;" ng-model="contact.text"
+		    ></textarea>
+		  </label>   
+
+			<div class="row" style="margin-top:20px;">
+				<div class="col col-33 col-offset-33">
+     		 <button class="button button-energized" style="width:100%" ng-click="contact(item)">Contact</button>
+     		</div>
+     	</div>
+
+    </ion-content>
+  </ion-modal-view>
+</script>

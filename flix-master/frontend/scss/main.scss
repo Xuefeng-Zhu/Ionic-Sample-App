@@ -1,0 +1,150 @@
+/* Modal */
+
+.shows-modal-title {
+  font-size: 21px;
+  padding-top: 11px;
+  padding-left: 11px;
+  font-weight: 400;
+  letter-spacing: -1px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.shows-modal-section-title {
+  margin: 0;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #888;
+  margin-left: 10px;
+}
+
+.close-modal-button {
+  margin-top: 2px;
+  margin-left: -5px;
+}
+
+.modal .more-link-options:before {
+  color: #343434 !important;
+}
+
+.bar-header .button-icon.close-modal-button:before {
+  font-size: 23px !important;
+  color: #343434;
+}
+
+.modal .bar-header {
+  color: #1F1F1F;
+  background: #515151;
+  border-bottom: none !important;
+}
+
+.liked-shows-modal-content {
+  background: #EEE;
+  padding-top: 35px;
+  padding-bottom: 0px;
+}
+
+/* Header */
+
+.bar-header {
+  padding-top: 14px;
+  padding-left: 10px;
+  box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.1);
+  border-bottom: 1px solid #D9D9D9;
+  z-index: 10000;
+}
+
+.bar-header {
+  height: 60px;
+  position: relative;
+
+  .more-link-options:before {
+    line-height: 29px !important;
+  }
+
+  .favorites-button {
+    margin-left: 6px;
+    padding-top: 3px !important;
+
+    &:before {
+      font-size: 28px !important;
+      line-height: 29px !important;
+    }
+  }
+
+  .preferences-button {
+    padding-top: 3px !important;
+
+    &:before {
+      font-size: 26px !important;
+      line-height: 29px !important;
+    }
+  }
+}
+
+.has-header {
+  top: 60px !important;
+}
+
+.user-avatar {
+  height: 30px;
+  width: 30px;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 40px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.user-info-container {
+  position: absolute;
+  right: 40px;
+  margin-top: 3px;
+}
+
+.user-info-container .regional-flag {
+  position: absolute;
+  top: 0px;
+  left: -10px;
+  width: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.more-link-options {
+  position: absolute;
+  right: 5px;
+  top: 13px;
+  text-align: center;
+  width: 32px;
+}
+
+.bar-header .button-icon.more-link-options:before {
+  font-size: 35px !important;
+  line-height: 38px;
+  padding-top: 5px;
+}
+
+.user-avatar img {
+  max-height: 30px;
+  border-radius: 2px;
+}
+
+.platform-android, .platform-browser {
+  .popover-with-two-items {
+    height: 110px !important;
+  }
+
+  .popover-with-one-item {
+    height: 55px !important;
+  }
+}
+
+.faded {
+  opacity: 0.3 !important;
+}

@@ -1,0 +1,258 @@
+$card-width: 100%;
+$card-height: 100%;
+$card-bottom-height: 83%;
+
+.cards-container {
+  background: #EDEDED;
+}
+
+.show-card-container {
+  position: relative;
+  height: $card-height;
+  width: $card-width;
+  overflow: hidden;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+
+  .show-card-bottom {
+    transition: transform 0.2s ease-out;
+    transform: translate3d(0, 60%, 0);
+  }
+
+  .show-card-title {
+    transition: all 0.2s ease-out;
+    transform: translate3d(0, -39%, 0);
+  }
+
+  .show-card-actions {
+    transition: transform 0.2s ease-out;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .show-card-title-text, .show-card-imdb-rating {
+    transition: font-size 0.2s ease-out;
+  }
+
+  &.info-is-expanded {
+    .show-card-bottom {
+      transform: translate3d(0, 9%, 0);
+    }
+
+    .show-card-title {
+      transform: translate3d(0, -89.5%, 0);
+      background: rgba(0,0,0,0.8);
+
+      .show-card-title-text {
+        font-size: 18px !important;
+        max-height: 25px;
+      }
+
+      .show-card-imdb-rating {
+        font-size: 16px;
+      }
+    }
+
+    .show-card-actions {
+      box-shadow: none;
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+}
+
+td-cards {
+  display: block;
+  position: relative;
+  width: 95%;
+  height: 94% !important;
+  min-width: 300px;
+  min-height: 420px;
+  max-height: 700px;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.td-cards {
+  height: 100%;
+}
+
+.swipe-card {
+  height: 100% !important;
+}
+
+td-card {
+  position: absolute;
+  top: 14px;
+  width: $card-width;
+  height: $card-height;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0px 2px 5px 2px rgba(222, 222, 222, 0.6);
+
+  &:hover {
+    cursor: -webkit-grab;
+  }
+}
+
+.show-card-bottom {
+  position: absolute;
+  bottom: 0px;
+  font-family: 'Droid Sans', 'Helvetica Neue';
+  width: 100%;
+  background: #fff;
+  height: 100%;
+  // height: $card-bottom-height;
+}
+
+
+.show-card-poster-glass {
+  background-size: cover;
+  position: absolute;
+  top: -80px;
+  left: -3px;
+  width: $card-width + 5%;
+  height: 100%;
+  opacity: 0.8;
+  -webkit-filter: brightness(0.5) contrast(1.4);
+  border-radius: 2px;
+  margin: 1px;
+}
+
+.show-card-details-container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.show-card-title {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0;
+  font-weight: 300;
+  font-family: 'Droid Sans', 'Helvetica Neue';
+  font-size: 22px;
+
+  .show-card-title-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: 72%;
+    max-width: 440px;
+  }
+
+  .show-card-imdb-rating {
+    padding: 4px 9px 0px 0px;
+    border: none;
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    color: #E9C809;
+    font-size: 18px;
+
+    .imdb-rating {
+      display: inline-block;
+      padding-left: 0px;
+    }
+  }
+
+
+  .show-card-title-text {
+    position: absolute;
+    bottom: 15px;
+    left: 13px;
+  }
+}
+
+.show-card-description {
+  width: 100%;
+  margin: 0;
+  padding: 15px;
+  overflow: hidden;
+  box-shadow: 0px -10px 10px 0px rgba(0,0,0,0.4);
+
+  .platform-browser & {
+    font-size: 14px;
+  }
+}
+
+.show-card-genre {
+  // margin: 3px 0 3px 0;
+  // font-size: 14px;
+  // color: #999999;
+  // font-weight: normal;
+
+  // .platform-browser & {
+  //   font-size: 15px;
+  // }
+}
+
+.show-card-row.show-card-plain-row {
+  &.section-divider {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: 15px;
+  }
+
+  margin: 0;
+  background: #fff;
+  border-top: none;
+  padding: 10px 15px 0px 0px;
+  color: #4E4B4B;
+
+  p {
+    padding-top: 2px;
+    color: #222;
+  }
+
+  .show-card-label {
+    color: #999999;
+  }
+}
+
+.not-interested-button {
+  display: inline-block;
+  padding: 20px 15px 17px 15px;
+  width: 50%;
+  text-align: center;
+}
+
+.add-to-list-button {
+  display: inline-block;
+  padding: 20px 15px 17px 10px;
+  float: right;
+  width: 50%;
+  text-align: center;
+}
+
+.show-card-row {
+  width: 100%;
+  border-top: 1px solid #eee;
+  background: rgba(0, 0, 0, 0.03);
+
+  & > div {
+    padding-bottom: 2px;
+  }
+}
+
+.show-card-buttons {
+  letter-spacing: -0.6px;
+  font-weight: 600;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.show-card-actions {
+  box-shadow: -5px 0px 15px 20px rgba(255, 255, 255, 0.8);
+  background: #fff;
+  position: absolute;
+  border-top: 1px solid #eee;
+  bottom: 0;
+  width: 100%;
+}
+
+.pt0 {
+  padding-top: 0px !important;
+}

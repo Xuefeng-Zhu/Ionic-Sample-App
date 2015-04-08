@@ -1,0 +1,19 @@
+<ion-view title="Story Comments">
+  <ion-nav-bar class="bar-energized">
+    <ion-nav-back-button class="button-icon icon ion-ios7-arrow-back"></ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content has-header="true">
+    <ion-list>
+      <!-- not using collection repeat since we have a rather finite amount of results and variable height items -->
+      <ion-item class="item comment"
+                ng-repeat="comment in comments"
+                ng-show="comment.text.length"
+                ng-style="{'padding-left':comment.indent*15+'px'}">
+        <p class="timestamp">{{comment.time|timeago}}</p>
+        <p class="author">{{comment.by}} <i class="icon ion-arrow-down-b"></i></p>
+        <div class="text" ng-bind-html="trust(comment.text)" ng-click="bubbleCheck($event)"></div>
+        <button class="button button-small button-outline button-energized" style="margin-top:5px;" ng-if="comment.kids.length>0 && comment.moreToLoad=='avail'" ng-click="loadMoreComments(comment)">{{comment.kids.length}} more comment...</button>
+        <button class="button button-small button-outline button-energized" style="margin-top:5px;" ng-if="comment.moreToLoad=='loading'"><i class="ion-loading-c"></i></button>
+      </ion-item>
+  </ion-content>
+</ion-view>

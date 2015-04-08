@@ -1,0 +1,5 @@
+{
+  "name": "tinderflix",
+  "app_id": "",
+  "gulpStartupTasks": ["watch"]
+}

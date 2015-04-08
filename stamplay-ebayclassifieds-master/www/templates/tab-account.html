@@ -1,0 +1,46 @@
+<ion-view title="Account">
+  <ion-content class="padding">
+
+
+   <ion-refresher ng-show="user.firstName"
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+
+  <!-- USER IS LOGGED -->
+	<div style="text-align:center" ng-show="user.firstName">
+		<h3>Hi {{user.firstName}} ! </h3>
+		<!-- SPINNER -->
+		<div class="row" ng-show="load" style="text-align:center;">
+			<div class="col col-33 col-offset-33">
+				<li class="ion-loading-c" data-pack="default" data-tags="spinner, waiting, refresh, animation" data-animation="true"></li>
+			</div>
+		</div>
+
+		<!-- Offerts list-->
+			<ion-list class="list">
+		    <ion-item> {{items.length+' Offers' || 'No Offer' }} </ion-item>     
+		    <ion-item class="item item-thumbnail-left" ng-repeat="object in items"> 
+		      <img ng-src="{{object.photo}}">
+		      <button class="button button-clear button-assertive" style="position:inherit;float:right;min-height: 0px;min-width: 0px;line-height: normal;" ng-click="delete(object)">
+		      	<li class="ion-close-round" data-pack="default" data-tags="delete, remove, dump" style="display: inline-block;"></li>
+		      </button>
+		      <h2 style="text-align:left">{{object.name}}</h2>
+		      <p style="text-align:left">{{object.description}}</p>
+		      <p style="text-align:left">
+		        {{object.dt_create | date:'mediumDate'}}
+		        <span class="badge badge-positive" style="position:inherit;float:right;">{{object.price}} €
+		        </span>
+		      </p>
+		    </ion-item>
+			</ion-list>
+	</div>
+
+	<!-- USER NOT LOGGED -->
+	<div style="text-align:center" ng-show="!user.firstName">
+		<h4>Please Login</h4>
+		<button class="button button-energized" ng-click="goToLogin()">Go to Login</button>
+	</div>
+
+  </ion-content>
+</ion-view>

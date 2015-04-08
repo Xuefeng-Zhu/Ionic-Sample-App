@@ -1,0 +1,25 @@
+<div id="forecast" class="weather-box">
+  <h4 class="title">Forecast</h4>
+  <ion-scroll direction="x" id="forecast-scroll">
+    <div id="hourly-forecast">
+      <div class="hourly-hour" ng-repeat="hour in current.hourly.data">
+        <div class="time" ng-bind="hour.time * 1000 | date:'h a'"></div>
+        <weather-icon icon="hour.icon"></weather-icon>
+        <div class="temp">{{hour.temperature | tempInt}}&deg;</div>
+      </div>
+    </div>
+  </ion-scroll>
+  <div class="row" ng-repeat="day in current.daily.data">
+    <div class="col"><span ng-bind="day.time * 1000 | date:'EEE'"></span></div>
+    <div class="col"><weather-icon icon="day.icon"></weather-icon></div>
+    <div class="col">
+      <span class="temp-high">{{day.temperatureMax | tempInt}}&deg;</span>
+      <span class="temp-low">{{day.temperatureMin | tempInt}}&deg;</span>
+    </div>
+  </div>
+  <div class="clearfix">
+    <div class="credit">
+      Powered by <a href="http://forecast.io" target="_blank">forecast.io</a>
+    </div>
+  </div>
+</div>

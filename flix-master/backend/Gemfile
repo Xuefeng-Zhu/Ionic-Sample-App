@@ -1,0 +1,25 @@
+source 'https://rubygems.org'
+
+ruby '2.1.5'
+
+gem 'rails', '4.2.0'
+gem 'pg'
+gem 'active_model_serializers'
+gem 'rack-cors'
+gem 'jwt'
+gem 'httparty'
+gem 'uglifier'
+
+group :production do
+  gem 'unicorn'
+  gem 'rails_12factor'
+end
+
+group :development, :test do
+  gem 'dotenv-rails'
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
+  gem 'pry-rails'
+  gem 'colorscore'
+  gem 'rspec-rails', '~> 3.0'
+end

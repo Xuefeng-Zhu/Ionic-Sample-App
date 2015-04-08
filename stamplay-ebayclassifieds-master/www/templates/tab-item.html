@@ -1,0 +1,65 @@
+<ion-view title="Search & Buy">
+  <ion-content class="padding">
+  
+  <div class="list">
+	 
+    <label class="item item-input">
+	    <i class="icon ion-search placeholder-icon"></i>
+	    <input type="text" placeholder="What are you looking for?" ng-model="item.name">
+    </label>
+
+	   <label class="item item-input item-select">
+      <div class="input-label">
+        Area
+      </div>
+      <select ng-model="item.selectedArea">
+      	<option selected></option>
+        <option ng-repeat="area in areas">{{area.name}}</option>
+      </select>
+    </label>
+   
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Category
+      </div>
+      <select ng-model="item.selectedCategory">
+        <option selected></option>
+        <option ng-repeat="category in categories">{{category.name}}</option>
+      </select>
+    </label>
+  
+
+  </div>
+
+	<div class="row" style="margin-bottom:20px;">
+		<div class="col col-33 col-offset-33">
+			<button style="width:100%" class="button button-energized" ng-click="submit()"> Find it! </button>
+		</div>
+	</div>
+
+	<div class="row" ng-show="load" style="text-align:center;">
+		<div class="col col-33 col-offset-33">
+			<li class="ion-loading-c" data-pack="default" data-tags="spinner, waiting, refresh, animation" data-animation="true"></li>
+		</div>
+	</div>
+
+<div >
+	<ion-list class="list">
+
+    <ion-item ng-show="visible"> {{items.length+' Offers' || 'No Offer' }} </ion-item>
+
+    <ion-item class="item item-thumbnail-left complex-item" ng-repeat="object in items" href="#/tab/item/{{object._id}}" > 
+      <img ng-src="{{object.photo}}">
+      <h2>{{object.name}}</h2>
+      <p>{{object.description}}</p>
+      <p>
+        {{object.dt_create | date:'mediumDate'}}
+        <span class="badge badge-positive" style="position:inherit;float:right;">{{object.price}} €
+        </span>
+      </p>
+    </ion-item>
+	</ion-list>
+
+</div>
+  </ion-content>
+</ion-view>

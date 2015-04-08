@@ -1,0 +1,8 @@
+.DS_Store
+.idea
+/node_modules/
+/plugins/*
+/platforms/*
+ionic.project
+www/js/config.js
+engine

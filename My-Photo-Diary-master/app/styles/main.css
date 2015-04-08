@@ -1,0 +1,5 @@
+.background, .background .pane, .background .item, .background .item-complex .item-content{
+    background-color: #f7f8fa;
+}
+
+.angular-google-map-container { height:100%; width:100%; position:absolute; top:0; left:0; }

@@ -1,0 +1,14 @@
+{
+  "name": "inputErrors",
+  "email": "",
+  "app_id": "",
+  "package_name": "",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

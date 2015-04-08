@@ -1,0 +1,33 @@
+<ion-view title="Timeline" class="background">
+    <ion-content padding="true" delegate-handle="timelineScroll">
+
+        <div class="card" ng-if="pictures.length===0">
+            <div class="item item-text-wrap">
+                No pictures in your timeline.
+            </div>
+        </div>
+
+        <div class="list card" bindonce ng-repeat="picture in pictures">
+
+
+            <div class="item item-body">
+                <img class="full-image" bo-src=picture.url>
+                <p>
+
+                    <span bo-text="picture.description"></span>
+                </p>
+            </div>
+
+
+            <div class="button-bar">
+                <button class="button icon ion-ios7-trash-outline" ng-click="deletePhoto(picture, $index)">
+                </button>
+                <button class="button icon ion-ios7-upload-outline" ng-click="sharePhoto(picture)">
+                </button>
+            </div>
+
+        </div>
+        <ion-infinite-scroll ng-if="canLoadMorePictures()" icon="ion-loading-c" on-infinite="loadMore()" distance="5%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

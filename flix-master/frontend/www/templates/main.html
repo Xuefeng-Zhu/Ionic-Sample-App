@@ -1,0 +1,48 @@
+<ion-view view-title="">
+  <ion-side-menus>
+    <ion-side-menu-content>
+      <ion-header-bar ng-class="{'main-app-nav': true, 'bar-light': true}">
+         <div ng-class="{'buttons': true, 'nav-buttons': true, 'out-of-focus': sideMenuIsOpen()}"
+              ng-controller="NavCtrl">
+           <button menu-toggle="left"
+                   class="button button-icon button-clear ion-android-settings
+                          preferences-button
+                          ng-class:{'button-positive': sideMenuIsOpen()}">
+           </button>
+           <a ng-click="openLikedShowsModal()"
+              class="button button-icon button-clear ion-android-list
+                     favorites-button
+                     ng-class:{'button-positive': likedShowsModalIsOpen}">
+           </a>
+
+           <user-info></user-info>
+
+           <a ng-click="openPopover($event)"
+              class="more-link-options button button-icon button-clear
+                     ion-android-more-vertical
+                     ng-class:{'button-positive': moreOptionsPopoverIsOpen}">
+           </a>
+        </div>
+      </ion-header-bar>
+
+      <ion-content padding="true" scroll="false"
+                   ng-class="{'cards-container': true, 'out-of-focus': sideMenuIsOpen()}"
+                   ng-controller="CardsCtrl">
+        <td-cards ng-if="shows.length">
+            <td-card ng-repeat="show in shows | limitTo: 1 track by show.id"
+                     on-partial-swipe="partialSwipeShow($index)"
+                     on-snap-back="snapBackShow($index)"
+                     on-destroy="destroyShow($index)"
+                     my-on-swipe-right="likedShow($index)"
+                     my-on-swipe-left="dislikedShow($index)">
+              <show-card show="show"></show-card>
+            </td-card>
+          </td-cards>
+      </ion-content>
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left">
+      <preferences-menu></preferences-menu>
+    </ion-side-menu>
+  </ion-side-menus>
+</ion-view>

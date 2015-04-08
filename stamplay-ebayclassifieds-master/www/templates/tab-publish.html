@@ -1,0 +1,68 @@
+<ion-view title="Publish">
+  <ion-content class="padding">
+
+<!-- id exist user  -->
+	<div >
+
+			<label class="item item-input">
+		    <input type="text" placeholder="Title" ng-model="publish.name">
+	    </label>
+		  <label class="item item-input">
+		    <textarea placeholder="Description" ng-model="publish.description" style="min-height:100px;"
+		    ></textarea>
+		  </label>
+		  <label class="item item-input item-select">
+	      <div class="input-label">
+	        Area
+	      </div>
+	      <select ng-model="publish.area">
+	      	<option selected></option>
+	        <option ng-repeat="area in areas">{{area.name}}</option>
+	      </select>
+    	</label>
+   
+		  <label class="item item-input item-select">
+		    <div class="input-label">
+		      Category
+		    </div>
+		    <select ng-model="publish.category">
+		      <option selected></option>
+		      <option ng-repeat="category in categories">{{category.name}}</option>
+		    </select>
+		  </label>
+
+	    <label class="item item-input">
+		    <input type="number" placeholder="Price" ng-pattern="onlyNumbers" ng-model="publish.price">
+	    </label>
+	    <label class="item item-input">
+		    <input type="email" placeholder="Your Email" ng-model="publish.email">
+	    </label>
+	    <label class="item item-input">
+		    <input type="text" placeholder="Your telephone" ng-model="publish.telephone">
+	    </label>
+	    <label class="item item-input">
+		    <input type="text" placeholder="Your Address" ng-model="publish.address">
+	    </label>
+
+
+  	<button ng-click="getPhoto()" class="button button-block button-primary">+
+				    <i class="icon ion-camera"></i></button>
+   
+				<div class="row">
+					<div class="col col-80 col-offset-10">
+						<img id="image-preview" style="width:100%"></img>
+					</div>
+			  </div>
+
+			<div class="row" style="margin-top:20px;">
+				<div class="col col-33 col-offset-33">
+		      <button class="button button-energized" style="width:100%" ng-click="publishItem()">Publish</button>
+				</div>
+			</div>
+			
+	<div>
+<!-- else -->
+	
+
+  </ion-content>
+</ion-view>

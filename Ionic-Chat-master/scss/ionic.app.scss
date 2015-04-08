@@ -1,0 +1,108 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #4a87ee !default;
+$calm:                            #43cee6 !default;
+$balanced:                        #66cc33 !default;
+$energized:                       #f0b840 !default;
+$assertive:                       #ef4e3a !default;
+$royal:                           #8a6de9 !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path:'../lib/ionic/fonts' !default;
+// Include all of Ionic
+@import 'www/lib/ionic/scss/ionic';
+ .content-stable {
+  background: $stable;
+}
+.scroll {
+  padding: 10px 0 50px;
+}
+.messages {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 20px;
+  .message {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 10px;
+    -webkit-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+    overflow: hidden;
+    text-align: left;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.time {
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+  width: 120px;
+  text-align: center;
+  padding: 0 0 0 0;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  -webkit-transform: translate3d(10px, 0, 0);
+  -moz-transform: translate3d(10px, 0, 0);
+  transform: translate3d(10px, 0, 0);
+  &.slide-right {
+    -webkit-transform: translate3d(130px, 0, 0);
+    -moz-transform: translate3d(130px, 0, 0);
+    transform: translate3d(130px, 0, 0);
+  }
+}
+//This will change
+.messages.other {
+  .message {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    text-align: right;
+  }
+  .message.slide-right {
+    -webkit-transform: translate3d(120px, 0, 0);
+    -moz-transform: translate3d(120px, 0, 0);
+    transform: translate3d(120px, 0, 0);
+  }
+  span {
+    color: black;
+    background-color: #C7C7CC;
+  }
+}
+span {
+  background: #007AFF;
+  display: inline-block;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
+  max-width: 240px;
+}

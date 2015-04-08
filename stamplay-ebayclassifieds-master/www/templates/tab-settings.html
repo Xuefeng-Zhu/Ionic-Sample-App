@@ -1,0 +1,43 @@
+<ion-view title="Settings" scroll="false">
+  <ion-content >
+
+  <div class="list">	
+		
+		<div class="item item-divider">
+      Account
+    </div>
+	  
+	  <a class="item item-icon-right" href="#/tab/settings/login" ng-show="!user.email">
+	    <i class="icon ion-person"></i>
+	    Login 
+	  </a>
+
+	  <a class="item item-icon-right" ng-click="logout()" ng-show="user.email">
+	    <i class="icon ion-person"></i>
+	    Logout 
+	  </a>
+
+	  <a class="item item-icon-right" ng-click="confirm()">
+	    <i class="icon ion-flag"></i>
+	    Confirm a Publish
+	  </a>
+
+	  <div class="item item-divider">
+     Privacy & More  
+    </div>
+
+	  <a class="item item-icon-right" href="#/tab/settings/contact">
+	    <i class="icon ion-email"></i>
+	    Contact us
+	  </a>
+
+	  <a class="item item-icon-right" href="#/tab/settings/terms">
+	    <i class="icon ion-document"></i>
+	    Terms
+	  </a>
+
+	</div>
+
+
+  </ion-content>
+</ion-view>

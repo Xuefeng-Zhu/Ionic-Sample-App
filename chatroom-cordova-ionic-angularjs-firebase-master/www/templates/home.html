@@ -1,0 +1,28 @@
+<nav-page id="app-page">
+  <!-- where the content of each page will be rendered -->
+  <header class="bar bar-header bar-calm">
+    <button class="button button-icon" ng-click="toggleSideMenu()"><i class="icon ion-navicon"></i></button>
+    <h1 class="title">Lobby</h1>
+    <button class="button button-icon" ng-click="goToNewRoom()"><i class="icon ion-plus"></i></button>
+  </header>
+  <content
+    has-header="true"
+    has-footer="true"
+    has-tabs="true"
+    scroll="true"
+    padding="true"
+    on-refresh="onRefresh()"
+             animate-nav="true"
+    >
+
+    <!-- for pull to refresh -->
+    <refresher></refresher>
+    <list>
+      <link-item ng-repeat="room in rooms" type="item-text-wrap" href="#/rooms/{{room.id}}">
+          <h3>{{room.title}}</h3>
+          <p>{{room.description}}</p>
+        </item>
+      </link-item>
+    </list>
+  </content>
+</nav-page>
