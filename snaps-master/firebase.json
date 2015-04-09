@@ -1,9 +1,0 @@
-{
-  "firebase": "snap-ruby-db",
-  "public": "www",
-  "ignore": [
-    "firebase.json",
-    ".*",
-    "**/node_modules/**"
-  ]
-}
